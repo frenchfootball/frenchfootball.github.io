@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script src="https://cdn.tailwindcss.com/"></script>
+	<title>French Football</title>
+	<link href="assets/images/favico.png" rel="icon" type="image/x-icon" />
+	<link href="cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+	<link href="cdn.jsdelivr.net/npm/keen-slider%406.6.8/keen-slider.min.css" rel="stylesheet" />
+	<style type="text/css">@font-face {
+        font-family: 'GothamBlack';
+        src: url('assets/fonts/Gotham-Black.otf');
+      }
+	</style>
+	<style type="text/css">.image {
+      position: absolute;
+      width: 100%;
+      height: 130%;
+      background-image: url(assets/images/home.png);
+      background-size: cover;
+      background-color: purple;
+      }
+	</style>
+	<style type="text/css">.image2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(assets/images/tokenomics.jpg);
+            background-size: cover;
+            background-color: purple;
+            }
+	</style>
+	<style type="text/css">.image3 {
+            position: absolute;
+            width: 100%;
+            height: 48%;
+            background-image: url(assets/images/end.png);
+            background-size: cover;
+            background-color: purple;
+            }
+	</style>
+	<style type="text/tailwindcss">@layer components {
+        .title-section {
+          @apply text-4xl font-bold;
+        }
+        .tokenomic-card {
+          @apply flex-1 rounded-lg h-auto md:h-[400px] lg:h-[480px] bg-white relative p-3;
+        }
+        .tokenomic-card > img {
+          @apply absolute left-0;
+        }
+        .our-team-card {
+          width: calc(20% - 50px);
+        }
+        .btn-hover {
+          @apply relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-full after:bg-[#63d0ff] after:ease-in after:duration-200 after:-z-10 hover:after:w-full;
+        }
+        .icon-hover {
+          @apply hover:text-[#F6DB2A] hover:border-[#F6DB2A];
+        }
+        .header-sticky {
+          @apply sticky top-0 bg-[#1b1b1b] shadow-xl;
+        }
+        .nav-item {
+          @apply px-3 py-2 rounded-md cursor-pointer hover:bg-white/10;
+          font-size: 20px;
+          color: white;
+        }
+        section {
+          @apply mb-32;
+        }
+        @media screen and (max-width: 768px) {
+          .our-team-card {
+            width: calc(20% - 10px);
+          }
+        }
+      }
+	</style>
+	<style type="text/css">.collapsible {
+        background-color: #777;
+        color: rgb(249, 249, 249);
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: #555;
+        color: #f6db2a;
+      }
+      .active + .content {
+        padding: 24px 18px;
+      }
+
+      .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .active:after {
+        content: '\2212';
+      }
+
+      .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: hsl(0, 0%, 0%);
+      }
+      .content a {
+        color: #145aa8;
+      }
+
+      /* Test */
+      [class^='number-slide'],
+      [class*=' number-slide'] {
+        background: grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        color: #fff;
+        font-weight: 500;
+        /* height: 300px; */
+        /* max-height: 100vh; */
+      }
+      .keen-slider__slide {
+        min-width: 272px;
+        height: auto;
+      }
+	</style>
+	<script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primaryColor: '#bdbd22',
+            },
+            backgroundImage: {
+              'footer-banner': "url('/assets/images/footer-banner.jpg')",
+            },
+            fontFamily: {
+              gothamBlack: ['GothamBlack', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="min-h-screen bg-[#171a46] text-white font-gothamBlack overflow-hidden" style="background-image: url(assets/images/Background.png); background-repeat: repeat; background-size: 100%; color: #fff; width: 100%;">
+  
+<div class="h-screen w-full bg-[#171a46] z-50 flex items-center justify-center" id="preload-section"><img alt="Preloader" class="w-36 animate__animated animate__flip animate__infinite preloader" src="assets/images/Untitled.png" /></div>
+
+<header class="header-area z-10 bg-[#171a46]" id="header">
+<div class="container max-w-screen-xl relative mx-auto px-4 py-4">
+<div class="w-full">
+<nav class="flex items-center navbar navbar-expand-lg justify-between"><a class="mr-4" href="index.html"><img alt="Logo" class="w-auto h-20" src="assets/images/logo.png" /> </a><button aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation" class="block navbar-toggler focus:outline-none lg:hidden" data-target="#navbarOne" data-toggle="collapse" onclick="toggleMenu()" type="button"><svg class="h-10 w-10 text-white" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path clip-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" fill-rule="evenodd"></path> </svg></button>
+
+<div class="absolute hidden top-[112px] -right-[100vw] z-20 w-full px-5 py-3 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none" id="navbarOne">
+<ul class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex text-primaryColor space-x-0 ld:space-x-8" id="nav">
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#home" >HOME</a></li>
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#about">About Us</a></li>
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#nft">NFT</a></li>
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#tokenomics">Tokenomics </a></li>
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#roadmap">Roadmap</a></li>
+	<li class="nav-item"><a style="color:rgb(221, 207, 0)" class="page-scroll" href="#partner">Partner</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</header>
+
+<div>
+<section class="bg-footer-banner bg-bottom bg-no-repeat bg-cover items-center" id="home">
+<div class="items-center animate__animated animate__fadeOut"><img style="width:100%;" id="image" src="assets/images/home.png">
+</div>
+</section>
+
+<section class="container mx-auto px-2 max-w-screen-xl" id="about">
+<div class="container mx-auto px-3 max-w-screen-xl">
+<div style="color:rgb(221, 207, 0)" class="w-full title-section text-center mb-4 md:text-6xl animate__animated animate__fadeOut" >ABOUT US<br />
+&nbsp;</div>
+</div>
+
+
+<div class="flex flex-col md:flex-row gap-10">
+<div class="flex flex-col basis-1/2">
+
+<div class="text-xl w-full text-center animate__animated animate__fadeOut" style="color:#ddcf00;">The token is created for the fans of the French team that can generate long-term profits by holding FFB. FFB is a token that deflates using a portion of the token's taxes to buy back and burn.Why FFB build on the Binance Smart Chain network?
+  <br>We decided to choose the Binance Smart Chain network because users can trade easily and quickly. The outstanding features of BSC network are ease to use, a lot of users, low transaction costs and fast,....</div>
+
+<!-- <div class="flex mt-5 gap-4"> <a class="border-2 border-[#ddcf00] p-2 rounded-md text-center w-full btn-hover" href="assets/whitepaper.pdf" style="color:rgb(221, 207, 0)">Whitepaper </a></div> -->
+</div>
+
+<div class="basis-2/3"><!-- <iframe
+              class="w-full aspect-video rounded-xl"
+                width="640"
+              height="480"
+              src="https://www.youtube.com/embed/VFo0vmA8A1U"
+            ></iframe> --><iframe allow="autoplay" height="330" src="assets/videos/brook.mp4" width="90%"></iframe></div>
+</div>
+</section>
+
+<section id="nft">
+<div class="w-full title-section text-center mb-6 md:text-6xl" style="color:rgb(221, 207, 0)">NFT</div>
+
+<div class="text-center animate__animated animate__fadeOut">
+<div class="text-2xl w-full md:w-2/3 mx-auto mb-10" style="color:rgb(221, 207, 0)">In the future, we will develop P2E. <br>We will create NFTs using images of team players with different stats. <br>The money from the sale of NFT will be used to develop and buyback FFF.
+  <br>The new future: Hold To Earn</div>
+
+<div class="keen-slider" id="my-keen-slider">
+
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(1).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(2).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(3).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(4).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(5).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(6).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(7).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(8).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(9).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(11).png" /></div>
+<div class="keen-slider__slide"><img alt="" src="assets/images/squad/(12).png" /></div>
+
+
+</div>
+</section>
+<section class="container mx-auto px-4 max-w-screen-xl" id="tokenomics">
+<div class="w-full title-section text-center mb-6 md:text-6xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">Tokenomics</div>
+</section>
+<img class="animate__animated animate__fadeOut" style="width:100%; " id="image" src="assets/images/tokenomics.jpg">
+
+
+<section>
+<div>
+<div></div>
+</div>
+</section>
+
+<section class="container mx-auto px-4 max-w-screen-xl" id="roadmap">
+<div class="w-full title-section text-center mb-6 md:text-6xl" style="color:rgb(221, 207, 0)">Roadmap<br />
+&nbsp;</div>
+
+<div class="flex gap-2 md:items-center flex-col md:flex-row">
+<div class="flex-1"><img alt="onepiece" class="object-contain animate__animated animate__fadeOut" src="assets/images/stage-1.png" /></div>
+
+<div class="flex-1 -order-1 md:order-1">
+<div class="text-3xl font-bold mb-4 animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">PHASE 1</div>
+
+<ul class="flex flex-col gap-2 text-2xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">
+	<li>&bull; Set up Telegram Channel  </li>
+	<li>&bull; Building a Global English, China  </li>
+	<li>&bull; Community</li>
+	<li>&bull; Twitter Global</li>
+	<li>&bull; Build Website 1.0</li>
+	<li>&bull; Audit & KYC</li>
+  <li>&bull; Create Whitepaper</li>
+  <li>&bull; Original membership</li>
+  <li>&bull; Setup a Presale Whitelist</li>
+  <li>&bull; Reach 3000 members</li>
+</ul>
+</div>
+</div>
+
+<div class="flex gap-2 md:items-center flex-col md:flex-row animate__animated animate__fadeOut">
+<div class="flex-1">
+<div class="text-3xl font-bold mb-4 animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">PHASE 2</div>
+
+<ul class="flex flex-col gap-2 text-2xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">
+	<li>&bull; Whitelist</li>
+	<li>&bull; NFT Design</li>
+	<li>&bull; PancakeSwap Listing</li>
+	<li>&bull; MarketPlace Launch</li>
+	<li>&bull; AVE CMC, CGK</li>
+	<li>&bull; ADS on various popular websites</li>
+	<li>&bull; Holder 2000 members</li>
+	<li>&bull; Host a charity event</li>
+  <li>&bull; Testnet Soccer Game French</li>
+  <li>&bull; Hayya</li>
+</ul>
+</div>
+
+<div class="flex-1"><img alt="onepiece" class=" object-contain animate__animated animate__fadeOut" src="assets/images/stage-2.png" /></div>
+</div>
+
+<div class="flex gap-2 md:items-center flex-col md:flex-row">
+<div class="flex-1"><img alt="onepiece" class="object-contain animate__animated animate__fadeOut" src="assets/images/stage-3.png" /></div>
+
+<div class="flex-1 -order-1 md:order-1">
+<div class="text-3xl font-bold mb-4 animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">PHASE 3</div>
+
+<ul class="flex flex-col gap-2 text-2xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">
+	<li>&bull; NFT Football Player</li>
+	<li>&bull; Development</li>
+	<li>&bull; Exchange list</li>
+	<li>&bull; Mainnet Soccer Game French</li>
+	<li>&bull; Hayya</li>
+  <li>&bull; CEX listing</li>
+  <li>&bull; App Development & more</li>
+  <li>&bull; Expanded Roadmap for Phase</li>
+  <li>&bull; 4+</li>
+</ul>
+</div>
+</div>
+
+<!-- <div class="flex gap-2 md:items-center flex-col md:flex-row">
+<div class="flex-1">
+<div class="text-3xl font-bold mb-4">PHASE 4</div>
+
+<ul class="flex flex-col gap-2 text-2xl">
+	<li>&bull; Coin Lacator</li>
+	<li>&bull; Development</li>
+	<li>&bull; Exchange list</li>
+	<li>&bull; Expand the development team</li>
+	<li>&bull; App Development &amp; more</li>
+	<li>&bull; Expanded Roadmap for Phase 5+</li>
+</ul>
+</div> -->
+<!-- 
+<div class="flex-1"><img alt="onepiece" class="object-contain animate__animated animate__fadeOut" src="assets/images/stage-4.png" /></div>
+</div>
+</section> -->
+
+<section class="pb-10 container mx-auto px-4 max-w-screen-xl" id="partner">
+<div class="w-full title-section text-center mb-6 md:text-6xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)"><br><br>Partners<br />
+&nbsp;</div>
+
+<div class="flex justify-between items-start">
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn2.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn3.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn4.png" /></div>
+</div>
+
+
+
+
+</div>
+
+<div class="flex justify-between items-start mt-5">
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/BSC.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pancake.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/poo.png" /></div>
+</div>
+
+
+
+</div>
+
+<br><br><br>
+
+<div class="flex justify-between items-start">
+
+
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn5.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn7.png" /></div>
+</div>
+
+<div class="our-team-card">
+  <div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/pn6.png" /></div>
+  </div>
+
+</div>
+
+<div class="flex justify-between items-start mt-5">
+
+
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/cyberscope.png" /></div>
+</div>
+
+<div class="our-team-card">
+<div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/7.png" /></div>
+</div>
+<div class="our-team-card">
+  <div class="lex flex-col animate__animated animate__fadeOut"><img alt="our team" src="assets/images/6.png" /></div>
+  </div>
+
+</div>
+</section>
+</div>
+
+<section class="container mx-auto px-4 max-w-screen-xl" id="aaaa">
+<div class="w-full title-section text-center md:text-5xl animate__animated animate__fadeOut" style="color:rgb(221, 207, 0)">Join Our Community<br />
+&nbsp;</div>
+
+<div class="flex justify-center items-start animate__animated animate__fadeOut"><a class="mr-4" href="https://twitter.com/FrenchFootbalI"><img alt="Logo" class="w-auto h-20" src="assets/images/twitter.jpg" /> </a> <a class="mr-4 animate__animated animate__fadeOut" href="https://t.me/frenchfootball1000x"> <img alt="Logo" class="w-auto h-20" src="assets/images/tele.jpg" /> </a></div>
+</section>
+
+<p><img class="animate__animated animate__fadeOut" style="width:100%;" id="image" src="assets/images/end.png">
+  <!--====== Main js ======--> <script src="assets/js/sanji.js"></script> <script src="cdn.jsdelivr.net/npm/keen-slider%406.6.8/keen-slider.min.js"></script> <script>
+      var animation = { duration: 25000, easing: (t) => t };
+
+      var slider = new KeenSlider('#my-keen-slider', {
+        loop: true,
+        renderMode: 'performance',
+        drag: false,
+        slides: {
+          perView: 'auto',
+          spacing: 15,
+        },
+        created(s) {
+          s.moveToIdx(5, true, animation);
+        },
+        updated(s) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        },
+        animationEnded(s) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        },
+      });
+
+      var slider = new KeenSlider('#my-keen-slider2', {
+        loop: true,
+        renderMode: 'performance',
+        drag: false,
+        rtl: true,
+        slides: {
+          perView: 'auto',
+          spacing: 15,
+        },
+        created(s) {
+          s.moveToIdx(5, true, animation);
+        },
+        updated(s) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        },
+        animationEnded(s) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        },
+      });
+    </script> <script>
+      function toggleMenu() {
+        console.log('run');
+        const menu = document.getElementById('navbarOne');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('-right-[100vw]');
+        menu.classList.toggle('right-0');
+      }
+    </script></p>
+</body>
+</html>
